@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'checkstyle'
+    id 'findbugs'
+    id 'jacoco'
+    id 'war'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+group = 'jp.gihyo.jenkinsbook'
+version = '1.0.0'
+ext {
+    artifactId = 'sampleproject'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0',
+                    'javax.servlet.jsp:javax.servlet.jsp-api:2.3.1'
+    testCompile 'junit:junit:4.11',
+                'org.easymock:easymock:3.2'
+    checkstyle 'com.puppycrawl.tools:checkstyle:5.5'
+    findbugs 'com.google.code.findbugs:findbugs:3.0.0'
+}
+
+checkstyleMain {
+    configFile = file('./config/checkstyle/sun_checks.xml')
+    ignoreFailures = true
+}
+
+checkstyleTest {
+    configFile = file('./config/checkstyle/sun_checks.xml')
+    excludes = ['**/*']
+}
+
+findbugsMain {
+    ignoreFailures = true
+}
+
+findbugsTest {
+    ignoreFailures = true
+}
+
+test {
+    ignoreFailures = true
+}
+
+war {
+    dependsOn check
+    baseName = project.ext.artifactId
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
