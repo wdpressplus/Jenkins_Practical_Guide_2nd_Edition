@@ -7,7 +7,7 @@
 - 技術評論社、2015年
 
 ### サポートページ
-https://gihyo.jp/magazine/wdpress/plus/978-4-7741-7423-5
+http://gihyo.jp/magazine/wdpress/plus/978-4-7741-7423-5
 
 ### WEB+DB PRESS plusシリーズ
 http://wdpress.gihyo.jp/plus
@@ -25,7 +25,7 @@ http://opensource.org/licenses/mit-license.php
 
 ## 本書についてのご質問
 本書についてのお問い合わせは、以下のページからお願いします。
-http://gihyo.jp/magazine/wdpress/plus/978-4-7741-7423-5
+https://gihyo.jp/site/inquiry/book?ISBN=978-4-7741-7423-5
 
 ## ソースコードについて
 WEBアプリケーションのサンプルプログラムです。
